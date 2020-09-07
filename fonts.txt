@@ -1,0 +1,35 @@
+Acumin Pro Bold
+
+font-family: acumin-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Acumin Pro Bold Italic
+
+font-family: acumin-pro, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Acumin Pro Wide Bold
+
+font-family: acumin-pro-wide, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Acumin Pro Wide Light
+
+font-family: acumin-pro-wide, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Acumin Pro Wide Semibold
+
+font-family: acumin-pro-wide, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+Acumin Pro Wide Regular
+
+font-family: acumin-pro-wide, sans-serif;
+font-weight: 400;
+font-style: normal;
