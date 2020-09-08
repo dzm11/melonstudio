@@ -70,6 +70,7 @@ body:after {
 	pointer-events: none;
 	animation: noise 1s steps(2) infinite;
 }
+
 #scroll-container {
 	position: absolute;
 	overflow: hidden;
@@ -115,6 +116,7 @@ body:after {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 120px;
+
 	.title--text__solid {
 		h1 {
 			font-family: acumin-pro-wide, sans-serif;

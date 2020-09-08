@@ -18,6 +18,61 @@
 gsap.registerPlugin(ScrollTrigger);
 
 var container = document.querySelector('#scroll-container');
+const title = document.querySelector('.title');
+const header = document.querySelector('.header');
+const selected = document.querySelector('.selected');
+const portfolio = document.querySelectorAll('.portfolio');
+
+gsap.fromTo(
+	header.children,
+	{ opacity: 0 },
+	{
+		opacity: 1,
+		duration: 1
+	}
+);
+
+gsap.fromTo(
+	title.children,
+	{ y: '+=50', opacity: 0 },
+	{
+		y: 0,
+		opacity: 1,
+		stagger: 0.3,
+		duration: 1,
+		delay: 1
+	}
+);
+
+gsap.fromTo(
+	selected.children,
+	{ y: '+=30', opacity: 0 },
+	{
+		y: 0,
+		opacity: 1,
+		stagger: 0.3,
+		duration: 1,
+		delay: 2
+	}
+);
+
+portfolio.forEach((portfolio) => {
+	gsap.fromTo(
+		portfolio.children,
+		{ y: '+=100', opacity: 0 },
+		{
+			y: 0,
+			opacity: 1,
+			stagger: 0.2,
+			duration: 1,
+			ease: 'easeInOut',
+			scrollTrigger: {
+				trigger: portfolio,
+				start: 'top 60%'
+			}
+		}
+	);
+});
 
 var height;
 function setHeight() {
