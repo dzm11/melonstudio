@@ -63,7 +63,7 @@ portfolio.forEach((portfolio) => {
 		{
 			y: 0,
 			opacity: 1,
-			stagger: 0.2,
+			stagger: 0.4,
 			duration: 1,
 			ease: 'easeInOut',
 			scrollTrigger: {
