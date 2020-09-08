@@ -54,6 +54,7 @@ body {
 	background-color: #edeae4;
 	display: flex;
 	justify-content: flex-end;
+	pointer-events: none;
 }
 body:after {
 	top: -200px;
