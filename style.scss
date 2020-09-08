@@ -400,6 +400,9 @@ body:after {
 	}
 	.title {
 		margin-bottom: 40px;
+		.title--text__stroke {
+			-webkit-text-stroke-width: 1px;
+		}
 	}
 	.selected {
 		margin-bottom: 40px;
