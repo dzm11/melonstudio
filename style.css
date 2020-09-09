@@ -395,6 +395,53 @@ body:after {
   text-align: right;
 }
 
+.footer--text .footer--text__solid .underline-btn {
+  display: inline-block;
+  padding-bottom: 1em;
+  border-radius: 0;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer--text .footer--text__solid .underline-btn:before, .footer--text .footer--text__solid .underline-btn:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 8px;
+  width: 0;
+}
+
+.footer--text .footer--text__solid .underline-btn:before {
+  -webkit-transition: width 0s ease, background .4s ease;
+  transition: width 0s ease, background .4s ease;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+}
+
+.footer--text .footer--text__solid .underline-btn:after {
+  right: 0;
+  bottom: 6px;
+  background: white;
+  -webkit-transition: width .4s ease;
+  transition: width .4s ease;
+}
+
+.footer--text .footer--text__solid .underline-btn:hover:before {
+  width: 100%;
+  background: white;
+  -webkit-transition: width .4s ease;
+  transition: width .4s ease;
+}
+
+.footer--text .footer--text__solid .underline-btn:hover:after {
+  width: 100%;
+  background: 0 0;
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+}
+
 .footer--text .footer--text__stroke h1 {
   -webkit-font-smoothing: antialiased;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -619,6 +666,21 @@ body:after {
 }
 
 @media (max-width: 400px) {
+  .header--email {
+    display: none;
+  }
+  .display {
+    padding: 0 15px;
+  }
+  .selected .selected--text {
+    padding-right: 5px;
+  }
+  .selected .selected--arrow img {
+    padding-bottom: 2px;
+  }
+}
+
+@media (max-width: 340px) {
   .header--email {
     display: none;
   }

@@ -22,6 +22,7 @@ const title = document.querySelector('.title');
 const header = document.querySelector('.header');
 const selected = document.querySelector('.selected');
 const portfolio = document.querySelectorAll('.portfolio');
+const footer = document.querySelector('.footer--text');
 
 gsap.fromTo(
 	header.children,
@@ -73,6 +74,18 @@ portfolio.forEach((portfolio) => {
 		}
 	);
 });
+
+gsap.fromTo(
+	footer.children,
+	{ y: '+=50', opacity: 0 },
+	{
+		y: 0,
+		opacity: 1,
+		stagger: 0.3,
+		duration: 1,
+		delay: 1
+	}
+);
 
 var height;
 function setHeight() {
