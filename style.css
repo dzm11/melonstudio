@@ -338,6 +338,10 @@ body:after {
   background-color: white;
 }
 
+.portfolio .portfolio--content img {
+  width: 100%;
+}
+
 .portfolio:nth-child(2n + 1) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;

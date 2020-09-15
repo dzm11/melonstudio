@@ -235,6 +235,9 @@ body:after {
 		height: 650px;
 		width: 1100px;
 		background-color: white;
+		img {
+			width: 100%;
+		}
 	}
 }
 .portfolio:nth-child(2n + 1) {
