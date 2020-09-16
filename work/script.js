@@ -23,8 +23,7 @@ gsap.fromTo(
 		y: 0,
 		opacity: 1,
 		stagger: 0.3,
-		duration: 1,
-		delay: 1
+		duration: 1
 	}
 );
 
@@ -38,10 +37,12 @@ work.forEach((work) => {
 			stagger: 0.4,
 			duration: 1,
 			ease: 'easeInOut',
+			delay:1,
 			scrollTrigger: {
 				trigger: work,
-				start: 'top 60%'
-			}
+				start: 'top 60%',
+				invalidateOnRefresh: true
+						}
 		}
 	);
 });
