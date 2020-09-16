@@ -4,6 +4,8 @@ var container = document.querySelector('#scroll-container');
 const title = document.querySelector('.title');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer--text');
+const gallery = document.querySelector('.gallery');
+const work = document.querySelectorAll('.work');
 
 gsap.fromTo(
 	header.children,
@@ -25,6 +27,24 @@ gsap.fromTo(
 		delay: 1
 	}
 );
+
+work.forEach((work) => {
+	gsap.fromTo(
+		gallery.children,
+		{ y: '+=100', opacity: 0 },
+		{
+			y: 0,
+			opacity: 1,
+			stagger: 0.4,
+			duration: 1,
+			ease: 'easeInOut',
+			scrollTrigger: {
+				trigger: work,
+				start: 'top 60%'
+			}
+		}
+	);
+});
 
 gsap.fromTo(
 	footer.children,
