@@ -39,10 +39,10 @@ work.forEach((work) => {
 			ease: 'easeInOut',
 			delay:1,
 			scrollTrigger: {
-				trigger: work,
+				trigger: gallery,
 				start: 'top 60%',
 				invalidateOnRefresh: true
-						}
+			}
 		}
 	);
 });
