@@ -34,14 +34,13 @@ work.forEach((work) => {
 		{
 			y: 0,
 			opacity: 1,
-			stagger: 0.4,
+			stagger: 0.2,
 			duration: 1,
 			ease: 'easeInOut',
-			delay:1,
+			delay: 1,
 			scrollTrigger: {
 				trigger: gallery,
-				start: 'top 60%',
-				invalidateOnRefresh: true
+				start: 'top 60%'
 			}
 		}
 	);

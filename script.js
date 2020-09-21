@@ -23,6 +23,10 @@ const header = document.querySelector('.header');
 const selected = document.querySelector('.selected');
 const portfolio = document.querySelectorAll('.portfolio');
 const footer = document.querySelector('.footer--text');
+const preview = document.querySelectorAll('.portfolio img');
+const modal = document.querySelector('.modal');
+const original = document.querySelector('.full-img');
+const body = document.querySelector('body');
 
 gsap.fromTo(
 	header.children,
@@ -69,7 +73,8 @@ portfolio.forEach((portfolio) => {
 			ease: 'easeInOut',
 			scrollTrigger: {
 				trigger: portfolio,
-				start: 'top 60%'
+				start: 'top 60%',
+				markers: true
 			}
 		}
 	);
@@ -103,5 +108,23 @@ gsap.to(container, {
 		end: 'bottom bottom',
 		scrub: 1,
 		invalidateOnRefresh: true
+	}
+});
+
+preview.forEach((preview) => {
+	preview.addEventListener('click', () => {
+		modal.classList.add('open');
+		original.classList.add('open');
+		const originalSrc = preview.getAttribute('data-original');
+		body.style.overflow = 'hidden';
+		// original.src = `full/${originalSrc}`;
+	});
+});
+
+modal.addEventListener('click', (e) => {
+	if (e.target.classList.contains('modal')) {
+		modal.classList.remove('open');
+		original.classList.remove('open');
+		body.style.overflow = 'auto';
 	}
 });

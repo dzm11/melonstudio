@@ -238,6 +238,7 @@ body:after {
 		img {
 			width: 100%;
 			height: 100%;
+			cursor: pointer;
 		}
 	}
 }
@@ -353,6 +354,41 @@ body:after {
 		text-decoration: none;
 		color: white;
 	}
+}
+
+.modal {
+	background: rgba(0, 0, 0, .5);
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	transition: .25s ease-out;
+	overflow: hidden;
+}
+.full-img {
+	opacity: 0;
+	position: absolute;
+	width: 80%;
+	top: 10%;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	// transform: translate(-50%, -50%);
+	transition: all 0.5s ease-in-out;
+}
+.full-img.open {
+	opacity: 1;
+}
+.modal.open {
+	padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+	box-sizing: content-box;
+	overflow: scroll;
+	opacity: 1;
+	pointer-events: all;
 }
 
 @media (max-width: 1800px) {
