@@ -212,8 +212,8 @@ body:after {
   display: -ms-grid;
   display: grid;
   gap: 2em;
-  -ms-grid-columns: (minmax(450px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   margin-bottom: 60px;
 }
 
