@@ -73,8 +73,7 @@ portfolio.forEach((portfolio) => {
 			ease: 'easeInOut',
 			scrollTrigger: {
 				trigger: portfolio,
-				start: 'top 60%',
-				markers: true
+				start: 'top 60%'
 			}
 		}
 	);
