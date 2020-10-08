@@ -3,6 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 var container = document.querySelector('#scroll-container');
 const title = document.querySelector('.title');
 const header = document.querySelector('.header');
+const wholeFooter = document.querySelector('.footer');
 const footer = document.querySelector('.footer--text');
 const gallery = document.querySelector('.gallery');
 const work = document.querySelectorAll('.work');
@@ -45,6 +46,17 @@ work.forEach((work) => {
 		}
 	);
 });
+gsap.fromTo(
+	wholeFooter,
+	{ opacity: 0 },
+	{
+		y: 0,
+		opacity: 1,
+		stagger: 0.3,
+		duration: 1,
+		delay: 4
+	}
+);
 
 gsap.fromTo(
 	footer.children,
@@ -54,7 +66,7 @@ gsap.fromTo(
 		opacity: 1,
 		stagger: 0.3,
 		duration: 1,
-		delay: 1
+		delay: 4.5
 	}
 );
 
