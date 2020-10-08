@@ -61,7 +61,8 @@ body {
 	scroll-behavior: smooth;
 	overscroll-behavior: none;
 	overflow-x: hidden;
-	background-color: #edeae4;
+	background-color: #f4f2ed;
+	// background-color: white;
 	display: flex;
 	justify-content: flex-end;
 	// pointer-events: none;
@@ -371,7 +372,7 @@ body:after {
 .full-img {
 	opacity: 0;
 	position: absolute;
-	width: 80%;
+	width: 65%;
 	top: 10%;
 	left: 0;
 	right: 0;
