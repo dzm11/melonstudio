@@ -103,7 +103,7 @@ body {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   overflow-x: hidden;
-  background-color: #edeae4;
+  background-color: #f4f2ed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,7 +123,7 @@ body:after {
   position: fixed;
   pointer-events: none;
   background-position: 100%;
-  background-image: url("images/noise.png");
+  background-image: url("../images/noise.png");
   pointer-events: none;
   -webkit-animation: noise 1s steps(2) infinite;
           animation: noise 1s steps(2) infinite;
@@ -197,7 +197,7 @@ body:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .title .title--text__solid h1 {
@@ -206,6 +206,65 @@ body:after {
   font-style: normal;
   font-size: calc(1em + 8vw);
   line-height: calc(0.8em + 0.1vw);
+}
+
+.title .title--text__stroke h1 {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke-color: #28282a;
+  -webkit-text-stroke-width: 2px;
+  font-family: acumin-pro-wide, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: calc(1em + 8vw);
+  line-height: calc(0.8em + 0.1vw);
+}
+
+.selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.selected .selected--text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 100%;
+  padding-right: 30px;
+}
+
+.selected .selected--text .selected--text__solid h2 {
+  font-family: acumin-pro-wide, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: calc(1em + 4vw);
+  line-height: calc(0.7em + 0.1vw);
+}
+
+.selected .selected--text .selected--text__stroke h2 {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke-color: #28282a;
+  -webkit-text-stroke-width: 2px;
+  font-family: acumin-pro-wide, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: calc(1em + 4vw);
+  line-height: calc(0.9em + 0.6vw);
+}
+
+.selected .selected--arrow img {
+  padding-bottom: 10px;
+  height: 100%;
 }
 
 .gallery {
@@ -232,6 +291,8 @@ body:after {
   font-weight: 700;
   font-style: normal;
   font-size: 30px;
+  line-height: 27px;
+  margin-bottom: 7px;
 }
 
 .gallery .work .work--itself img {
@@ -394,6 +455,15 @@ body:after {
   .title {
     margin-bottom: 60px;
   }
+  .selected {
+    margin-bottom: 60px;
+  }
+  .selected .selected--text {
+    padding-right: 10px;
+  }
+  .selected .selected--arrow img {
+    padding-bottom: 5px;
+  }
   .footer--content {
     padding: 60px 60px 0 60px;
   }
@@ -404,6 +474,9 @@ body:after {
 
 @media (max-width: 1000px) {
   .title .title--text__stroke h1 {
+    -webkit-text-stroke-width: 1px;
+  }
+  .selected .selected--text .selected--text__stroke h2 {
     -webkit-text-stroke-width: 1px;
   }
 }
@@ -424,6 +497,9 @@ body:after {
   }
   .title .title--text__stroke {
     -webkit-text-stroke-width: 1px;
+  }
+  .selected {
+    margin-bottom: 40px;
   }
   .footer--text .footer--text__solid h1 {
     font-size: calc(1.5em + 4vw);
@@ -455,6 +531,38 @@ body:after {
   }
 }
 
+@media (max-width: 475px) {
+  .header--email {
+    display: none;
+  }
+  .display {
+    padding: 0 15px;
+  }
+  .selected .selected--text {
+    padding-right: 5px;
+  }
+  .selected .selected--arrow img {
+    padding-bottom: 2px;
+  }
+  .gallery {
+    display: -ms-grid;
+    display: grid;
+    gap: 2em;
+    -ms-grid-columns: (minmax(280px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 40px;
+  }
+  .gallery .work .work--title {
+    font-size: 30px;
+  }
+  .gallery .work .work--description .bold {
+    font-size: 14px;
+  }
+  .gallery .work .work--description .normal {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 400px) {
   .header--email {
     display: none;
@@ -462,14 +570,20 @@ body:after {
   .display {
     padding: 0 15px;
   }
+  .selected .selected--text {
+    padding-right: 5px;
+  }
+  .selected .selected--arrow img {
+    padding-bottom: 2px;
+  }
 }
 
-@media (max-width: 340px) {
-  .header--email {
-    display: none;
-  }
+@media (max-width: 370px) {
   .display {
-    padding: 0 15px;
+    padding: 0 10px;
+  }
+  .footer--content {
+    padding: 15px 15px 0 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */
