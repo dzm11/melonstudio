@@ -1,32 +1,14 @@
-// gsap.registerPlugin(ScrollTrigger);
-
-// const container = document.querySelector('#scroll-container');
-// const height = container.clientHeight;
-// document.body.style.height = `${height}px`;
-
-// gsap.to(container, {
-// 	y: -(height - document.documentElement.clientHeight),
-// 	ease: 'none',
-// 	scrollTrigger: {
-// 		trigger: document.body,
-// 		start: 'top top',
-// 		end: 'bottom bottom',
-// 		scrub: 1
-// 	}
-// });
-
 gsap.registerPlugin(ScrollTrigger);
 
-var container = document.querySelector('#scroll-container');
+let height;
+let container = document.querySelector('#scroll-container');
 const title = document.querySelector('.title');
 const header = document.querySelector('.header');
 const selected = document.querySelector('.selected');
-const portfolio = document.querySelectorAll('.portfolio');
+const wholeFooter = document.querySelector('.footer');
 const footer = document.querySelector('.footer--text');
-const preview = document.querySelectorAll('.portfolio img');
-const modal = document.querySelector('.modal');
-const original = document.querySelector('.full-img');
-const body = document.querySelector('body');
+const gallery = document.querySelector('.gallery');
+const work = document.querySelectorAll('.work');
 
 gsap.fromTo(
 	header.children,
@@ -44,11 +26,9 @@ gsap.fromTo(
 		y: 0,
 		opacity: 1,
 		stagger: 0.3,
-		duration: 1,
-		delay: 1
+		duration: 1
 	}
 );
-
 gsap.fromTo(
 	selected.children,
 	{ y: '+=30', opacity: 0 },
@@ -57,27 +37,39 @@ gsap.fromTo(
 		opacity: 1,
 		stagger: 0.3,
 		duration: 1,
-		delay: 2
+		delay: 1.5
 	}
 );
 
-portfolio.forEach((portfolio) => {
+work.forEach((work) => {
 	gsap.fromTo(
-		portfolio.children,
-		{ y: '+=100', opacity: 0 },
+		gallery.children,
+		{ y: '+=10', opacity: 0 },
 		{
 			y: 0,
 			opacity: 1,
-			stagger: 0.4,
-			duration: 1,
+			stagger: 0.2,
+			duration: 0.7,
 			ease: 'easeInOut',
+			delay: 1.5,
 			scrollTrigger: {
-				trigger: portfolio,
-				start: 'top 60%'
+				trigger: gallery,
+				start: 'top 90%'
 			}
 		}
 	);
 });
+gsap.fromTo(
+	wholeFooter,
+	{ opacity: 0 },
+	{
+		y: 0,
+		opacity: 1,
+		stagger: 0.3,
+		duration: 1,
+		delay: 4
+	}
+);
 
 gsap.fromTo(
 	footer.children,
@@ -87,43 +79,26 @@ gsap.fromTo(
 		opacity: 1,
 		stagger: 0.3,
 		duration: 1,
-		delay: 1
+		delay: 4.5
 	}
 );
 
-var height;
-function setHeight() {
-	height = container.clientHeight;
-	document.body.style.height = height + 'px';
-}
-ScrollTrigger.addEventListener('refreshInit', setHeight);
-
-gsap.to(container, {
-	y: () => -(height - document.documentElement.clientHeight),
-	ease: 'none',
-	scrollTrigger: {
-		trigger: document.body,
-		start: 'top top',
-		end: 'bottom bottom',
-		scrub: 1,
-		invalidateOnRefresh: true
+if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+	function setHeight() {
+		height = container.clientHeight;
+		document.body.style.height = height + 'px';
 	}
-});
+	ScrollTrigger.addEventListener('refreshInit', setHeight);
 
-preview.forEach((preview) => {
-	preview.addEventListener('click', () => {
-		modal.classList.add('open');
-		original.classList.add('open');
-		const originalSrc = preview.getAttribute('data-original');
-		body.style.overflow = 'hidden';
-		// original.src = `full/${originalSrc}`;
+	gsap.to(container, {
+		y: () => -(height - document.documentElement.clientHeight),
+		ease: 'none',
+		scrollTrigger: {
+			trigger: document.body,
+			start: 'top top',
+			end: 'bottom bottom',
+			scrub: 1,
+			invalidateOnRefresh: true
+		}
 	});
-});
-
-modal.addEventListener('click', (e) => {
-	if (e.target.classList.contains('modal')) {
-		modal.classList.remove('open');
-		original.classList.remove('open');
-		body.style.overflow = 'auto';
-	}
-});
+}

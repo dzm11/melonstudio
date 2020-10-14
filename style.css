@@ -123,7 +123,7 @@ body:after {
   position: fixed;
   pointer-events: none;
   background-position: 100%;
-  background-image: url("images/noise.png");
+  background-image: url("../images/noise.png");
   pointer-events: none;
   -webkit-animation: noise 1s steps(2) infinite;
           animation: noise 1s steps(2) infinite;
@@ -188,8 +188,13 @@ body:after {
           align-items: center;
 }
 
+.header .header--email a {
+  text-decoration: none;
+  color: black;
+}
+
 .title {
-  margin-top: 25px;
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,7 +202,7 @@ body:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .title .title--text__solid h1 {
@@ -224,7 +229,7 @@ body:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .selected .selected--text {
@@ -267,18 +272,16 @@ body:after {
   height: 100%;
 }
 
-.portfolio {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 120px;
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin-bottom: 60px;
 }
 
-.portfolio .portfolio--text {
-  padding-right: 30px;
-}
-
-.portfolio .portfolio--text .portfolio--tittle__wrap {
+.gallery .work {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,83 +289,40 @@ body:after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
 }
 
-.portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__solid {
+.gallery .work .work--title {
   font-family: acumin-pro-wide, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: calc(0.3em + 3.5vw);
-  line-height: calc(0.7em + 0.1vw);
+  font-size: 30px;
+  line-height: 27px;
+  margin-bottom: 7px;
 }
 
-.portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__stroke {
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke-color: #28282a;
-  -webkit-text-stroke-width: 2px;
-  font-family: acumin-pro-wide, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: calc(0.3em + 3.5vw);
-  line-height: calc(0.9em + 0.6vw);
+.gallery .work .work--itself img {
+  width: 100%;
 }
 
-.portfolio .portfolio--text .portfolio--text__description {
-  font-family: acumin-pro-wide, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  text-align: right;
-  font-size: calc(0.9em + 1vw);
-  line-height: calc(0.8em + 0.6vw);
-}
-
-.portfolio .portfolio--content {
+.gallery .work .work--description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 650px;
-  width: 1100px;
-  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.portfolio .portfolio--content img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+.gallery .work .work--description .bold {
+  font-family: acumin-pro-wide, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.portfolio:nth-child(2n + 1) {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.portfolio:nth-child(2n + 1) .portfolio--text .portfolio--tittle__wrap {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding-right: 0px;
-  padding-left: 30px;
-}
-
-.portfolio:nth-child(2n + 1) .portfolio--text .portfolio--text__description {
-  text-align: left;
-  padding-right: 0px;
-  padding-left: 30px;
+.gallery .work .work--description .normal {
+  font-family: acumin-pro-wide, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .footer {
@@ -484,47 +444,6 @@ body:after {
   color: white;
 }
 
-.modal {
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  -webkit-transition: .25s ease-out;
-  transition: .25s ease-out;
-  overflow: hidden;
-}
-
-.full-img {
-  opacity: 0;
-  position: absolute;
-  width: 65%;
-  top: 10%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.full-img.open {
-  opacity: 1;
-}
-
-.modal.open {
-  padding-right: 17px;
-  /* Increase/decrease this value for cross-browser compatibility */
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  overflow: scroll;
-  opacity: 1;
-  pointer-events: all;
-}
-
 @media (max-width: 1800px) {
   .display {
     padding: 0 60px;
@@ -532,52 +451,6 @@ body:after {
 }
 
 @media (max-width: 1680px) {
-  .portfolio {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    padding-left: 0px;
-  }
-  .portfolio .portfolio--text {
-    padding-right: 0px;
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding-right: 0px;
-    padding-top: 20px;
-  }
-  .portfolio .portfolio--text .portfolio--text__description {
-    text-align: left;
-  }
-  .portfolio .portfolio--content {
-    height: 50vw;
-    width: 100%;
-  }
-  .portfolio:nth-child(2n + 1) {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .portfolio:nth-child(2n + 1) .portfolio--text .portfolio--tittle__wrap {
-    padding-left: 0px;
-  }
-  .portfolio:nth-child(2n + 1) .portfolio--text .portfolio--text__description {
-    padding-left: 0;
-  }
   .footer--content {
     padding: 90px 60px 0 60px;
   }
@@ -596,9 +469,6 @@ body:after {
   .selected .selected--arrow img {
     padding-bottom: 5px;
   }
-  .portfolio {
-    margin-bottom: 60px;
-  }
   .footer--content {
     padding: 60px 60px 0 60px;
   }
@@ -613,19 +483,6 @@ body:after {
   }
   .selected .selected--text .selected--text__stroke h2 {
     -webkit-text-stroke-width: 1px;
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__solid {
-    font-size: calc(0.3em + 3.5vw);
-    line-height: calc(0.7em + 0.1vw);
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__stroke {
-    -webkit-text-stroke-width: 1px;
-    font-size: calc(0.3em + 3.5vw);
-    line-height: calc(0.9em + 0.6vw);
-  }
-  .portfolio .portfolio--text .portfolio--text__description {
-    font-size: calc(0.9em + 1vw);
-    line-height: calc(0.8em + 0.6vw);
   }
 }
 
@@ -649,27 +506,6 @@ body:after {
   .selected {
     margin-bottom: 40px;
   }
-  .portfolio {
-    margin-bottom: 40px;
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-bottom: 10px;
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__stroke {
-    -webkit-text-fill-color: black;
-    -webkit-text-stroke-color: #ffffff;
-    -webkit-text-stroke-width: 0;
-    font-family: acumin-pro-wide, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: calc(0.3em + 3.5vw);
-    line-height: calc(0.7em + 0.1vw);
-    margin-left: 10px;
-  }
   .footer--text .footer--text__solid h1 {
     font-size: calc(1.5em + 4vw);
     line-height: calc(0.8em + 1vw);
@@ -688,18 +524,6 @@ body:after {
   .header--name {
     padding-right: 20px;
   }
-  .portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__solid {
-    font-size: calc(1em + 3.5vw);
-    line-height: calc(0.7em + 0.1vw);
-  }
-  .portfolio .portfolio--text .portfolio--tittle__wrap .portfolio--text__stroke {
-    font-size: calc(1em + 3.5vw);
-    line-height: calc(0.7em + 0.1vw);
-  }
-  .portfolio .portfolio--text .portfolio--text__description {
-    font-size: calc(0.7em + 0.7vw);
-    line-height: calc(1em + 0.7vw);
-  }
   .footer--text .footer--text__solid h1 {
     line-height: calc(1em + 1vw);
   }
@@ -709,6 +533,38 @@ body:after {
   .footer--bottom {
     font-size: 14px;
     padding: 20px 0;
+  }
+}
+
+@media (max-width: 475px) {
+  .header--email {
+    display: none;
+  }
+  .display {
+    padding: 0 15px;
+  }
+  .selected .selected--text {
+    padding-right: 5px;
+  }
+  .selected .selected--arrow img {
+    padding-bottom: 2px;
+  }
+  .gallery {
+    display: -ms-grid;
+    display: grid;
+    gap: 2em;
+    -ms-grid-columns: (minmax(280px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 40px;
+  }
+  .gallery .work .work--title {
+    font-size: 30px;
+  }
+  .gallery .work .work--description .bold {
+    font-size: 14px;
+  }
+  .gallery .work .work--description .normal {
+    font-size: 14px;
   }
 }
 
@@ -727,18 +583,12 @@ body:after {
   }
 }
 
-@media (max-width: 340px) {
-  .header--email {
-    display: none;
-  }
+@media (max-width: 370px) {
   .display {
-    padding: 0 15px;
+    padding: 0 10px;
   }
-  .selected .selected--text {
-    padding-right: 5px;
-  }
-  .selected .selected--arrow img {
-    padding-bottom: 2px;
+  .footer--content {
+    padding: 15px 15px 0 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */
